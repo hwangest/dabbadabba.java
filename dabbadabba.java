@@ -1,65 +1,74 @@
-public class dabbadabba
-{
+public class dabbadabba {
 
-public static final int qq = 3;
+public static final int n = 3;
 
-    public static void foo() {
-        for (int i = 0; i < (qq+1)*2+1; i++) {
+    public static void dashes() {
+        for (int i = 0; i < (n+1)*2+1; i++) {
             System.out.print("-");
         }
     }
-    public static void bippitybop() {
-        foo();
-            System.out.print("| %");
-              for (int i = 0; i < 4; i++) {
+    
+    public static void drawFenceTop() {
+        dashes();
+        System.out.print("| %");
+        for (int i = 0; i < 4; i++) {
             System.out.print(" ");
-        } System.out.print("% |" );
-foo();
-System.out.println();
-    }
-
-    public static void foo_bop() {
-        bippitybop();
-        for (int i = 0; i < qq+1; i++) System.out.print(" o");
-        System.out.print(" | %");
-        for (int i = 0; i < 4; i++) System.out.print(" ");
-        System.out.print("% | ");
-        for (int i = 0; i < qq+1; i++) System.out.print("o ");
+        }
+        System.out.print("% |" );
+        dashes();
         System.out.println();
-        bippitybop();
     }
 
-    public static void drawsteps() {
-        for (int i = 0; i < qq; i++) {
-            for (int j = 0; j < (qq+1)-i; j++) {
-                System.out.print("~^"); }
+    public static void drawFenceMiddle() {
+        drawFenceTop();
+        for (int i = 0; i < n+1; i++) {
+			System.out.print(" o");
+		}
+		System.out.print(" | %");
+        for (int i = 0; i < 4; i++) {
+			System.out.print(" ");
+		}
+        System.out.print("% | ");
+        for (int i = 0; i < n+1; i++) {
+			System.out.print("o ");
+        }
+        System.out.println();
+        drawFenceTop();
+    }
+
+    public static void drawSteps() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < (n+1)-i; j++) {
+                System.out.print("~^"); 
+                }
             System.out.print("~/");
-            for (int j = 0; j < 8+4*i; j++) { System.out.print("-");
-            }
+            for (int j = 0; j < 8+4*i; j++) { 
+				System.out.print("-");
+				}
             System.out.print("\\~");
-            for (int j = 0; j < (qq+1)-i; j++) {
+            for (int j = 0; j < (n+1)-i; j++) {
                 System.out.print("^~");
                 }
-                System.out.println();
-                for (int j = 0; j < (qq+1)-i; j++) {
-                    System.out.print("^~");
-                    }
-                    System.out.print("/");
-                        for (int j = 0; j < 10+4*i; j++) {
-                    System.out.print("-"); }
-                        System.out.print("\\");
-                            for (int j = 0; j < (qq+1)-i; j++)
-                            {
-                            System.out.print("~^");
-                            }
-                            System.out.println();
-                            for (int j = 0; j < (qq+1)*2-(2*i); j++) {
-                            System.out.print(" ");
-                            }
-                    System.out.print("|");
-                for (int j = 0; j < 10+4*i; j++) {
-                            System.out.print("=");
-                    }
+            System.out.println();
+            for (int j = 0; j < (n+1)-i; j++) {
+                System.out.print("^~");
+                }
+                System.out.print("/");
+            for (int j = 0; j < 10+4*i; j++) {
+                System.out.print("-");
+                }
+            System.out.print("\\");
+            for (int j = 0; j < (n+1)-i; j++) {
+				System.out.print("~^");
+				}
+            System.out.println();
+            for (int j = 0; j < (n+1)*2-(2*i); j++) {
+				System.out.print(" ");
+				}
+            System.out.print("|");
+            for (int j = 0; j < 10+4*i; j++) {
+				System.out.print("=");
+				}
             System.out.print("|");
             System.out.println();
         }
@@ -67,47 +76,57 @@ System.out.println();
 
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < (qq+1)*2+(5-i); j++) {
-        System.out.print(" ");
+            for (int j = 0; j < (n+1)*2+(5-i); j++) {
+                System.out.print(" ");
+            }
+            System.out.print("/");
+            for (int j = 0; j < i; j++) {
+                System.out.print("/\\");
+            }
+            System.out.println("\\");
         }
-        System.out.print("/");
-        for (int j = 0; j < i; j++) {
-        System.out.print("/\\"); }
-        System.out.println("\\");
-        }
-        foo_bop();
-        drawsteps();
+        drawFenceMiddle();
+        drawSteps();
         System.out.print("   /");
-        for (int i = 0; i < 12+4*(qq-1); i++)
-        {
-            System.out.print(" ");
+        for (int i = 0; i < 12+4*(n-1); i++) {
+                System.out.print(" ");
         }
-        System.out.print("\\"); System.out.println(); System.out.print("  /  ");
-        for (int i = 0; i < 10+4*(qq-1); i++)
-        {
-            System.out.print("=");
+        System.out.print("\\");
+        System.out.println();
+        System.out.print("  /  ");
+        for (int i = 0; i < 10+4*(n-1); i++) {
+                System.out.print("=");
         }
-        System.out.print("  \\"); System.out.println(); System.out.print(" /  / ");
-        for (int i = 0; i < 8+4*(qq-1); i++)
-        { System.out.print("\""); }
+        System.out.print("  \\");
+        System.out.println();
+        System.out.print(" /  / ");
+        for (int i = 0; i < 8+4*(n-1); i++) {
+            System.out.print("\"");
+        }
         System.out.print(" \\  \\");
         System.out.println();
         System.out.print("|  | ");
-        for (int i = 0; i < 10+4*(qq-1); i++) System.out.print("\"");
+        for (int i = 0; i < 10+4*(n-1); i++) {
+            System.out.print("\"");
+        }
         System.out.print(" |  |");
         System.out.println();
         System.out.print(" \\  \\ ");
-        for (int i = 0; i < 8+4*(qq-1); i++)
+        for (int i = 0; i < 8+4*(n-1); i++) {
             System.out.print("\"");
-        System.out.print(" /  /"); System.out.println();
+        }
+        System.out.print(" /  /");
+        System.out.println();
         System.out.print("  \\  ");
-        for (int i = 0; i < 10+4*(qq-1); i++) {
+        for (int i = 0; i < 10+4*(n-1); i++) {
             System.out.print("=");
         }
         System.out.print("  /");
         System.out.println();
         System.out.print("   \\");
-        for (int i = 0; i < 12+4*(qq-1); i++) { System.out.print("_"); }
+        for (int i = 0; i < 12+4*(n-1); i++) {
+            System.out.print("_");
+        }
         System.out.println("/");
     }
 }
